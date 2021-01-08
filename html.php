@@ -98,7 +98,7 @@ class HTML {
         foreach ($tags_script_body as $body) {
             $tag = '<script>';
             foreach ($script as $attr => $value) {
-                $tag .= trim($$body);
+                $tag .= trim($body);
             }
             $tag .= '</script>';
             $buffer[] = $tag;
