@@ -92,7 +92,7 @@ class HTML {
             foreach ($script as $attr => $value) {
                 $tag .= $attr .'="'. htmlentities(trim($value)) .'" ';
             }
-            $tag .= '/></script>';
+            $tag .= '></script>';
             $buffer[] = $tag;
         }
         foreach ($tags_script_body as $body) {
