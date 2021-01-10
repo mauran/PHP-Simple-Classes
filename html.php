@@ -34,7 +34,7 @@ class HTML {
     }
 
     static public function setTitleEnd (string $title_end) {
-        self::$title_end = $title_end;
+        self::$title_end = ' '. strip_tags(trim($title_end));
     }
 
     static public function setDescription (string $description) {
@@ -90,7 +90,7 @@ class HTML {
         $tags_opengraph = self::$opengraph;
         $tags_opengraph_blocks = self::$opengraphBlocks;
         $buffer = [
-            '<title>'. strip_tags(trim(self::$title)) . strip_tags(rtrim(self::$title_end)) .'</title>'
+            '<title>'. strip_tags(trim(self::$title)) . self::$title_end .'</title>'
         ];
         // Basic meta tags
         foreach ($tags_meta as $meta) {
